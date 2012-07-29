@@ -2,7 +2,8 @@
 
 from django.contrib import admin
 
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext
+from django.utils.translation import ugettext_lazy as _
 from django.utils import formats
 
 from notifications.models import Notification
@@ -17,7 +18,7 @@ class NotificationAdmin(admin.ModelAdmin):
         if obj.shown_since:
             return formats.date_format(obj.shown_since, "DATETIME_FORMAT")
         else:
-            return _(u"This message is not shown")
+            return ugettext(u"This message is not shown")
 
     display_shown_since_value.short_description = _(u"Shown since")
 
