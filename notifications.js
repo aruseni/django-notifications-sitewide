@@ -8,7 +8,7 @@ $.extend($.easing,
 function set_cookie(name, value, expires) {
     var today = new Date();
     var expiration_datetime = new Date(today.getTime() + expires * 24 * 60 * 60 * 1000);
-        document.cookie = name + "=" + escape(value) + "; expires=" + expiration_datetime.toGMTString() + "; path=/;";
+    document.cookie = name + "=" + escape(value) + "; expires=" + expiration_datetime.toGMTString() + "; path=/;";
 }
 
 $(document).ready(function() {
